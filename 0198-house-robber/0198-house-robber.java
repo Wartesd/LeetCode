@@ -5,8 +5,8 @@ class Solution {
         int result = 0;
         for (int i=0; i<nums.length; i++){
             if (i == 0){
-                prev1 = nums[0];
-                result = prev1;
+                result = nums[0];
+                prev1 = result;
             }
             else if (i==1){
                 result = Math.max(prev1,nums[1]);
