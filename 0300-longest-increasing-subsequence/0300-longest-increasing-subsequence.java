@@ -8,7 +8,9 @@ class Solution {
                 dp[i] = Math.max(dp[j]+1, dp[i]);
             }
         }
-        return Arrays.stream(dp).max().getAsInt();
+        int max = 0;
+        for (int val : dp) max = Math.max(max, val);
+        return max;
     }
 }
 
