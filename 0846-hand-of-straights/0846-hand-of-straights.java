@@ -7,16 +7,18 @@ class Solution {
         }
         while (!hands.isEmpty()){
             int key=hands.firstKey();
-            hands.put(key, hands.getOrDefault(key,0)-1);
-            if (hands.get(key) == 0) hands.remove(key);
+            decrementOrRemove(hands,key);
             for (int count=1; count <= groupSize-1; count++){
                 int card = key+count;
                 if(!hands.containsKey(card)) return false;
-                hands.put(card, hands.getOrDefault(card,0)-1);
-                if (hands.get(card) == 0) hands.remove(card);
+                decrementOrRemove(hands,card);
             }
         }
         return true;
+    }
+    private void decrementOrRemove(TreeMap<Integer, Integer> hands, int card) {
+        hands.put(card, hands.get(card) - 1);
+        if (hands.get(card) == 0) hands.remove(card);
     }
 }
 
