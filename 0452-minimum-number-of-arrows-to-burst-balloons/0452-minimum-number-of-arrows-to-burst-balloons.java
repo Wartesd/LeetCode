@@ -7,7 +7,7 @@ class Solution {
             if (arrowCoordinate < points[i][0]){
                 arrowCoordinate = points[i][1];
                 count++;
-            }else continue;
+            }
         }
         return count;
     }
