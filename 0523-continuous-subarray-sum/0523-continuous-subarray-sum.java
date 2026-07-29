@@ -5,11 +5,11 @@ class Solution {
         remainingMap.put(0,-1);
         for (int i=0; i<nums.length; i++){
             runningSum+=nums[i];
-            int reminder = runningSum % k;
-            if (remainingMap.containsKey(reminder)){
-                if (i-remainingMap.get(reminder) > 1) return true;
+            int remainder = runningSum % k;
+            if (remainingMap.containsKey(remainder)){
+                if (i-remainingMap.get(remainder) > 1) return true;
             }else{
-                remainingMap.put(reminder,i);
+                remainingMap.put(remainder,i);
             }
         }
         return false;
