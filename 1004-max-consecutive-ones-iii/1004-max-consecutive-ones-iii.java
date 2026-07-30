@@ -7,12 +7,10 @@ class Solution {
             if (nums[right] == 0 ){
                 localZeroesCounter++;
             }
-            if (localZeroesCounter > k){
-                while (localZeroesCounter > k){
-                    if (nums[left] == 0) localZeroesCounter--;
-                    left++;
-                }
-            }
+            while (localZeroesCounter > k){
+                if (nums[left] == 0) localZeroesCounter--;
+                left++;
+            }  
             maxOnesStringLength = Math.max(maxOnesStringLength, right-left+1);
         }
         return maxOnesStringLength;
